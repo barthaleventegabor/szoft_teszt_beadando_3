@@ -16,3 +16,11 @@ h1 {
     border: 1px solid black;
     margin-top: 20px;
 }
+
+
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 5px;
+}
