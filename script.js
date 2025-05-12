@@ -7,13 +7,23 @@ function drawSquare(points) {
     const ctx = canvas.getContext('2d');
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+    
     ctx.beginPath();
     ctx.moveTo(points[0].x, points[0].y);
-    points.forEach(point => {
-        ctx.lineTo(point.x, point.y);
-    });
-    ctx.closePath();
+    for (let i = 1; i < points.length; i++) {
+        ctx.lineTo(points[i].x, points[i].y);
+    }
+    ctx.lineTo(points[0].x, points[0].y); 
+    ctx.strokeStyle = "black";
     ctx.stroke();
+
+    
+    points.forEach(p => {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, 4, 0, 2 * Math.PI);
+        ctx.fillStyle = "red";
+        ctx.fill();
+    });
 }
 
 function sortPoints(points) {
